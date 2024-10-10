@@ -13,20 +13,21 @@ def click_event(event, x, y, flags, param):
         cv2.circle(frame, (x, y), 5, (0, 255, 0), -1)
         #Annotate the coordinates on the image
         if 142 <= y < 213:
-            x_meter = x * pixel_to_meter*1.59
-            y_meter = y * pixel_to_meter* 5.87
+            x_meter = round((x - 858) / 90.6, 2)
+            y_meter = round((y - 144) * 3 / 69, 2)
         elif 213 <= y < 498:
-            x_meter = x * pixel_to_meter*1.195
-            y_meter = x * pixel_to_meter*3.32
+            x_meter = round((x - 622) / 135.5, 2)
+            y_meter = round((y - 213) * 7 / 285 + 3, 2)
         elif 498 <= y < 842:
-            x_meter = x * pixel_to_meter*0.85
-            y_meter = y * pixel_to_meter*1.37
+            x_meter = round((x - 391) / 181.8, 2)
+            y_meter = round((y - 494) * 3.5 / 761 + 10, 2)
         elif 842 <= y < 1259:
-            x_meter = x * pixel_to_meter*0.66
-            y_meter = y * pixel_to_meter* 1.13
+            x_meter = round((x - 161) / 225.3, 2)
+            y_meter = round((y - 827) * 3.5 / 432 + 13.5, 2)
         elif 1259 <= y < 1435:
-            x_meter = x * pixel_to_meter*0.59
-            y_meter = y * pixel_to_meter*1.13
+            x_meter = round((x - 72) / 240.9, 2)
+            y_meter = round((y - 1238) * 3 / 394 + 17, 2)
+
         cv2.putText(frame, f'({x_meter }, {y_meter})', (x + 10, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 1)
        
         cv2.imshow('Image', frame)
