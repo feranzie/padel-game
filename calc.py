@@ -3,7 +3,6 @@ import cv2
 # List to store clicked points
 clicked_points = []
 nos=1045
-pixel_to_meter=1/135
 # Mouse callback function to capture points
 def click_event(event, x, y, flags, param):
     if event == cv2.EVENT_LBUTTONDOWN:
