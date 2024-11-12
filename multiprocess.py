@@ -121,7 +121,7 @@ def process_video_segment(segment_path, output_path, frame_idx, gpu_id):
 
     return processing_time, csv_data
 
-def split_video(input_path, segment_length=500):  # Adjusted segment length for better balance
+def split_video(input_path, segment_length=600):  # Adjusted segment length for better balance
     segment_paths = []
     cap = cv2.VideoCapture(input_path)
     fps = int(cap.get(cv2.CAP_PROP_FPS))
